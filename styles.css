@@ -23,12 +23,12 @@ body{
 
 .sidebar{
     position: absolute;
-    width: 400px;
+    width: 70px;
     left: 0;
     top: 0;
     height: 100%;
     background-color: var(--green);
-    padding: 6px 14px;
+    padding: 10px;
     transition: all 0.5s ease-in-out;
     color: var(--text-color);
 }
@@ -38,6 +38,12 @@ body{
     height: 50px;
     display: flex;
     align-items: center;
+    padding-left: 0;
+    opacity: 0;
+}
+
+.sidebar .links_name{
+    opacity: 0;
 }
 
 .sidebar .logoContent .logo i{
@@ -48,15 +54,217 @@ body{
 .sidebar .logoContent .logo .logoName{
     font-size: 20px;
     font-weight: 400;
+    margin: 0 15px;
 }
 
 .sidebar .bx-menu{
     font-size: 30px;
     position: absolute;
     top: 6px;
-    left: 90%;
+    left: 50%;
     width: 50px;
     height: 50px;
     line-height: 50px;
     cursor: pointer;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 5px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar ul li input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background-color: var(--light-green);
+    padding-left: 50px;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li input::placeholder{
+    color: var(--text-color);
+}
+
+.sidebar ul li input:hover{
+    background-color: #fff;
+}
+
+.sidebar ul li .bx-search{
+    position: absolute;
+    font-size: 22px;
+    z-index: 999;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border-radius: 12px;
+}
+
+.sidebar ul li .bx-search:hover{
+    background-color: #fff;
+
+}
+
+.sidebar ul li a{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.5s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover{
+    background-color: #fff;
+}
+
+.sidebar ul li i{
+    min-width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 22px;
+
+}
+
+.sidebar .profileContent{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.sidebar .profileContent .profile{
+    position: relative;
+    height: 60px;
+    padding: 10px 6px;
+    background-color: var(--light-green);
+}
+
+.sidebar .profileContent .profile .profileDetail{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+
+.sidebar .profileContent .profile .profileDetail img{
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.profileDetail .name_job{
+    margin-left: 15px;
+}
+
+.profileDetail .name{
+    font: 15px 400;
+}
+
+.profileDetail .name_job .job{
+    font-size: 12px;
+}
+
+.profile .bx-exit{
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    text-align: center;
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+
+.homeContent{
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: calc(100% - 400px);
+    transition: all 0.5s ease;
+}
+
+.homeContent h2{
+    margin: 12px;
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.toolipe {
+    position: absolute;
+    top: 0;
+    left: 122px;
+    transform: translate(-50%, -50%);
+    width: 122px;
+    height: 35px;
+    background-color: #fff;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.500);
+    text-align: center;
+    color: #1d1d1d;
+    line-height: 35px;
+    transition: 0;
+    opacity: 0;
+}
+
+.sidebar ul li:hover .toolipe {
+    transition: all 0.5s ease;
+    top: 50%;
+    opacity: 1;
+
+}
+
+.sidebar.active{
+    width: 400px;
+}
+
+.homeContent.active{
+    left: 400px;
+}
+
+.sidebar.active .logoContent .logo{
+    opacity: 1;
+    padding-left: 15px;
+
+}
+
+.sidebar.active .bx-menu{
+    left: 90%;
+}
+
+.sidebar.active .links_name{
+    opacity: 1;
+}
+
+.sidebar.active .profileContent .profile .profileDetail{
+    opacity: 1;
+}
+
+.sidebar.active .profile .bx-exit{
+    left: 90%;
+}
+
+.sidebar.active .toolipe{
+    display: none;
 }
